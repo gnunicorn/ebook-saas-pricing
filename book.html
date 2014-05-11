@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="Asciidoctor 0.1.4">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Coders Guide to SaaS-App-Pricing</title>
+<style>
+/* ---------------------------------------------------------------------------
+   Bare AsciiDoc styles
+   Ryan Tomayko <r@tomayko.com>
+   edited by Benjamin Kampmann <ben@create-build-execute.com>
+--------------------------------------------------------------------------- */
+
+body {
+	font-family: verdana,helvetica,arial,sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 40px auto 50px auto;
+	max-width: 80%;
+	min-width: 790px;
+	color: #333;
+}
+
+em {
+	font-style:italic;
+}
+
+strong {
+	font-weight:bold;
+	color:#000;
+}
+
+tt {
+	font-family:consolas, 'lucida console', 'bitstream vera sans mono',
+	           'courier new', monospace;
+	color:#000;
+  font-size: 8px;
+}
+
+p, ul, ol, dl {
+	margin:10px 0
+}
+
+dl {
+	margin-left:40px
+}
+
+dt {
+	font-weight:normal;
+	color:#000;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family:'lucida grande',georgia,verdana,helvetica,arial,sans-serif;
+	font-weight:normal;
+	color:#000;
+}
+
+h1 {
+	font-size:40px;
+	line-height:1.428;
+	margin:20px 0;
+}
+
+h2 {
+	font-size:30px;
+	line-height:1.36363636; /* repeating, of course */
+	margin:60px 0 20px 0;
+}
+
+h2 + .sectionbody {}
+
+h3 {
+	font-size:24px;
+	line-height:1.1;
+	margin:30px 0 10px 0;
+}
+
+h4 {
+	font-size:18px;
+	line-height:1.1;
+	margin:20px 0 5px 0;
+}
+
+h5 {
+	font-size:13px;
+	font-style:italic;
+	line-height:1.1;
+}
+
+#header {
+	text-align:center;
+	margin-bottom:30px;
+}
+
+#header h1 { margin-bottom:0 }
+
+div.title, .sidebar-title {
+	font-weight:normal;
+	color:#000;
+	margin-bottom:0;
+}
+
+.admonitionblock .title {
+	font-weight:bold;
+}
+
+.admonitionblock {
+	margin:30px 0px;
+	color:#555;
+}
+
+.admonitionblock td.icon {
+	width:30px;
+	padding-right:20px;
+	padding-left:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#888;
+}
+
+.listingblock {
+  margin: 13px 0;
+}
+
+.listingblock .content {
+	border:1px solid silver;
+	background:#eee;
+	padding:5px;
+}
+
+.listingblock .content pre {
+	margin:0;
+}
+
+.literalblock .content {
+	margin-left:40px;
+}
+
+.verseblock .content {
+	white-space:pre
+}
+
+.sidebarblock .sidebar-content {
+	border:1px solid silver;
+	background:#FFFFEE;
+	padding:0 10px;
+	color:#222;
+	font-size:smaller;
+	line-height:1.5;
+}
+
+.sidebar-title {
+	margin:10px 0;
+	font-weight:bold;
+	color:#442;
+}
+
+.quoteblock-content {
+	font-style:italic;
+	color:#444;
+	margin-left:40px;
+}
+
+.quoteblock-content .attribution {
+	font-style:normal;
+	text-align:right;
+	color:#000;
+}
+
+.exampleblock-content *:first-child { margin-top:0 }
+.exampleblock-content {
+	border-left:2px solid silver;
+	padding-left:8px;
+}
+
+.paragraph .image img {
+	border: solid 1px #eee;
+    margin: 15px 3%;
+    width: 92%;
+    padding: 2px;
+}
+
+.imageblock {
+	border: solid 1px #eee;
+    margin: 15px 3%;
+    width: 92%;
+    padding: 2px 2px 0 2px;
+}
+
+.imageblock .title {
+	padding: 0 0.5em;
+}
+
+.imageblock img {
+	width: 100%;
+	border-bottom: solid 1px #eee;
+	margin-bottom: 1px
+}
+
+#footer {
+	font-size:11px;
+	margin-top:40px;
+	border-top:1px solid silver;
+	color:#555;
+}
+
+#author {
+	color:#000;
+	text-transform:uppercase
+}
+</style>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+<style>
+/* Foundation stylesheet for CodeRay (to match GitHub theme) | MIT License | http://foundation.zurb.com */
+table.CodeRay { border-collapse: collapse; padding: 2px; margin-bottom: 0; border: 0; background: transparent; }
+table.CodeRay td { padding: 0 .5em; vertical-align: top; }
+table.CodeRay td.line-numbers { text-align: right; color: #999; border-right: 1px solid #e5e5e5; padding-left: 0; }
+span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inline-block; margin-right: 0.5em; padding-right: 0.5em; }
+.CodeRay td.line-numbers strong, .CodeRay span.line-numbers strong { font-weight: normal; }
+.CodeRay .debug { color: white !important; background: blue !important; }
+.CodeRay .annotation { color: #007; }
+.CodeRay .attribute-name { color: #f08; }
+.CodeRay .attribute-value { color: #700; }
+.CodeRay .binary { color: #509; }
+.CodeRay .comment  { color: #999; font-style: italic; }
+.CodeRay .char { color: #04D; }
+.CodeRay .char .content { color: #04D; }
+.CodeRay .char .delimiter { color: #039; }
+.CodeRay .class { color: #458; }
+.CodeRay .complex { color: #A08; }
+.CodeRay .constant { color: teal; }
+.CodeRay .color { color: #0A0; }
+.CodeRay .class-variable { color: #369; }
+.CodeRay .decorator { color: #B0B; }
+.CodeRay .definition { color: #099; }
+.CodeRay .directive { color: #088; }
+.CodeRay .delimiter { color: black; }
+.CodeRay .doc { color: #970; }
+.CodeRay .doctype { color: #34b; }
+.CodeRay .doc-string { color: #D42; }
+.CodeRay .escape  { color: #666; }
+.CodeRay .entity { color: #800; }
+.CodeRay .error { color: #808; }
+.CodeRay .exception { color: #C00; }
+.CodeRay .filename { color: #099; }
+.CodeRay .function { color: #900; }
+.CodeRay .global-variable { color: teal; }
+.CodeRay .hex { color: #058; }
+.CodeRay .integer  { color: #099; }
+.CodeRay .include { color: #B44; }
+.CodeRay .inline { color: black; }
+.CodeRay .inline .inline { background: #ccc; }
+.CodeRay .inline .inline .inline { background: #bbb; }
+.CodeRay .inline .inline-delimiter { color: #D14; }
+.CodeRay .inline-delimiter { color: #D14; }
+.CodeRay .important { color: #f00; }
+.CodeRay .interpreted { color: #B2B; }
+.CodeRay .instance-variable { color: teal; }
+.CodeRay .label { color: #970; }
+.CodeRay .local-variable { color: #963; }
+.CodeRay .octal { color: #40E; }
+.CodeRay .predefined { color: #369; }
+.CodeRay .preprocessor { color: #579; }
+.CodeRay .pseudo-class { color: #00C; }
+.CodeRay .predefined-type { color: #074; }
+.CodeRay .reserved, .keyword  { color: #000; }
+.CodeRay .key { color: #808; }
+.CodeRay .key .delimiter { color: #606; }
+.CodeRay .key .char { color: #80f; }
+.CodeRay .value { color: #088; }
+.CodeRay .regexp { background-color: #fff0ff; }
+.CodeRay .regexp .content { color: #808; }
+.CodeRay .regexp .delimiter { color: #404; }
+.CodeRay .regexp .modifier { color: #C2C; }
+.CodeRay .regexp .function  { color: #404; font-weight: bold; }
+.CodeRay .string { color: #D20; }
+.CodeRay .string .string { }
+.CodeRay .string .string .string { background-color: #ffd0d0; }
+.CodeRay .string .content { color: #D14; }
+.CodeRay .string .char { color: #D14; }
+.CodeRay .string .delimiter { color: #D14; }
+.CodeRay .shell { color: #D14; }
+.CodeRay .shell .content { }
+.CodeRay .shell .delimiter { color: #D14; }
+.CodeRay .symbol { color: #990073; }
+.CodeRay .symbol .content { color: #A60; }
+.CodeRay .symbol .delimiter { color: #630; }
+.CodeRay .tag, .CodeRay .attribute-name { color: #070; }
+.CodeRay .tag-special { color: #D70; }
+.CodeRay .type { color: #339; }
+.CodeRay .variable  { color: #036; }
+.CodeRay .insert { background: #afa; }
+.CodeRay .delete { background: #faa; }
+.CodeRay .change { color: #aaf; background: #007; }
+.CodeRay .head { color: #f8f; background: #505; }
+.CodeRay .insert .insert { color: #080; }
+.CodeRay .delete .delete { color: #800; }
+.CodeRay .change .change { color: #66f; }
+.CodeRay .head .head { color: #f4f; }
+
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>A Coders Guide to SaaS-App-Pricing</h1>
+<span id="author" class="author">Benjamin Kampmann</span><br>
+<span id="email" class="email"><a href="mailto:ben@create-build-execute.com">ben@create-build-execute.com</a></span><br>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a short guide – on purpose. In the spirit of 37Signals' Getting Real sticks to the information relevant and in a brief but thorough fashion. This guide will teach you all you need and want to know about about pricing Software-as-a-Service (SaaS) Application. It won&#8217;t tell you want a SaaS is and what it isn&#8217;t how to structure or build it. This guide sole focuses on putting an optimal price tag on it. Though many of the rules might also apply to similar models like Kickstarter Campaigns, this guide focuses on reoccurring subscription pricing of SaaS for consumer and B2B-business.</p>
+</div>
+<div class="paragraph">
+<p>If you are here to just get a number: it is €29.95 per month (respectively $39.95). This guide will explain you why and which cases it is different. But if you don&#8217;t care and just want a number, odds are, this is the number you want.</p>
+</div>
+<div class="paragraph">
+<p>Enjoy.</p>
+</div>
+<div class="sect2">
+<h3 id="_changelog"><a class="anchor" href="#_changelog"></a>Changelog</h3>
+<div class="paragraph">
+<p>As this is supposed to be published primarily online, the document will have updates (in form of continues deployment). This section lists the changes, latest to first.</p>
+</div>
+<div class="paragraph">
+<p>If you want to stay up-to-date, please navigate to <a href="https://github.com/ligthyear/ebook-saas-pricing">https://github.com/ligthyear/ebook-saas-pricing</a> , log-in (or sign up), click on the "Not watching"-button and select "watching".</p>
+</div>
+<div class="paragraph">
+<p><strong>Latest Changes</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2014-05-11</p>
+<div class="ulist">
+<ul>
+<li>
+<p>latest copy edit</p>
+</li>
+<li>
+<p>fix the build, make publishable</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2014-03-12</p>
+<div class="ulist">
+<ul>
+<li>
+<p>copy edits</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2013-12-30</p>
+<div class="ulist">
+<ul>
+<li>
+<p>first draft</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_makes_saas_different"><a class="anchor" href="#_what_makes_saas_different"></a>What makes SaaS different?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Software as a Service (SaaS) is a very interesting business model model. With a subscription system at its core, SaaS revenue doesn&#8217;t come from new costumers only – it makes sense to focus on building a great product for your existing customers, too. Another highly fascinating aspect about SaaS lies in their cost structure: there are very low – if any – per-item-costs. While you need personnel to build, improve and scale it, this still makes it cheap compared to the cost structures of so many other businesses, where you might have to buy expensive special vehicles and tools and pay for per-item materials. As the term says, it is a service business and a highly cost-efficient scaling one, too.</p>
+</div>
+<div class="paragraph">
+<p>Unlike other software business, SaaS is barely about comparing lists of features for the customer – as every software and its service isn&#8217;t only unique but also fast and quick to enhance. Most likely you have a unique feature or way of doing things that differentiate you, while your competition might has offers, you don&#8217;t need or want to have. Which makes a customers a perfect fit for you. In the service industry you always want to convince your customers with another argument than "being cheaper" – and so want your competitors, by the way.</p>
+</div>
+<div class="paragraph">
+<p>Running a software in this the service industry means, you are not bound to have to think about pricing in a competitive manner nor do you have any costs forcing you to structure the pricing around them. Setting the price for a SaaS is totally in your hands, which makes it a game of psychology. One of high importance even, as it is a key factor whether people can, effort and want to pay for it. The beauty of it though, once you&#8217;ve found the target, it will sell like hot cake. On top, you have basically no costs on upselling them further either. We&#8217;ll come back to that later.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pricing_psychology_basics"><a class="anchor" href="#_pricing_psychology_basics"></a>Pricing Psychology basics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SaaS product have a few more spins to it though. Another one is its ability to be repackaged into essentially any size for no further costs. You can sell the same thing just in three or four different sizes. Thus allowing you to have an offer for each budget size.</p>
+</div>
+<div class="paragraph">
+<p>With its low costs, this is a key instrument in SaaS pricing: have multiple tiers. But be aware to give only a few. Offering too many makes the choice harder: there is too much to read and compare making it hard to decide which is the best solution – a fundamental problem with crowd funding pricing. Tiers instead should be comparable on one page, their differences and benefits clearly distinguishable making it easy to find that tier that fits the customer the best. In my experiences three pricing levels work the best - some argue it&#8217;s five, but I often feel that is too much to read (and you&#8217;d need five clear differentiations).</p>
+</div>
+<div class="sect2">
+<h3 id="_how_low_can_you_go"><a class="anchor" href="#_how_low_can_you_go"></a>How low can you go?</h3>
+<div class="paragraph">
+<p>The lowest priced tiers is the one, you&#8217;ll use for advertising and marketing. Try to make it as low as you can reason without having the feeling of selling out cheap. This is also the (only) tier you offer a free trial with. Both of these measures make it easier for people to start using your product. By making it fairly inexpensive it also has fewer cancellation. Even if people decide to not stick with your product, a price of for e.g. €9.99/month doesn&#8217;t feel like the trouble of trying to cancel (don&#8217;t make it hard to cancel though!). So, go as low as you can and still feel comfortable and make some money with.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_too_thin"><a class="anchor" href="#_too_thin"></a>Too thin</h3>
+<div class="paragraph">
+<p>Your real costumers won&#8217;t use it anyways, as that tier is too lightweight for them. The lowest offer shouldn&#8217;t be bad or cheesy, but don&#8217;t forget it is your marketing pricing to get people to look into your service, to try it out and hook them on it. This tier therefor should deliver "just not quiet enough" yet. If you&#8217;ve any reasonable idea of your business, you can probably tell right on the spot what is require to make it enough for your customers – otherwise do some market research. Maybe they&#8217;ll run through ten clients a month, then if only eight are included in your lowest tier or they are running a radio stream with music so they need 192kb/s mp3, then that tier supports only up to 128kb, if they have revenue of 15k per month, this tier allows up to 10k – you get the picture.</p>
+</div>
+<div class="paragraph">
+<p>It should be obvious that this tier isn&#8217;t quiet enough for them. Don&#8217;t shout it into their face nor make it a completely useless offer, but use terms and numbers they understand. They should have the feeling it isn&#8217;t sufficient for what they need. For a very simple reason: when they are checking your pricing this thoroughly, they&#8217;ve looked through your promo page are interested in your service and most likely want to use it. If they just want to try it, these numbers don&#8217;t mean much. They&#8217;ll hit the "free trial button" without wasting another look at it. But when they come back, after maybe having tried it and others, and do take the time to go through your offer thoroughly, you&#8217;ve already won. They are sold. Now you only need to settle on the price with them. And by making the cheapest solution unusable to them, they immediately move to the second tier, not even questioning whether another competition might be better at the same price. And it also gives them a slight satisfactory feeling of "being higher than just somebody".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_second_is_good_the_third_is_to_settle"><a class="anchor" href="#_the_second_is_good_the_third_is_to_settle"></a>The second is good, the third is to settle</h3>
+<div class="paragraph">
+<p>Now the second tier offers much more than the lowest one we&#8217;ve talked about. Not only can they run their business with it, but it is almost too generous, offers more than they ever feel to be needing. For just about double the initial price (or slightly less) - it&#8217;s a very good. It is in the price range they want to and <em>should</em> settle. But they don&#8217;t. By offering so much already – essentially all they ever wanted – they&#8217;ve become curious about what more you could be offering. And they&#8217;ll have a look at the third tier and compare it to the second.</p>
+</div>
+<div class="paragraph">
+<p>Now it gets interesting. By having a price slightly higher than the second tier but adding something extra-ordinary - even if they don&#8217;t necessarily need it - the offer will be very interesting to them. Because you are offering so much more in the third in comparison to tier two while it isn&#8217;t even that much more expensive. Comparing them it actually feels like a really good offer, you get more for your money. In my experience, the best way to achieve this is by adding exactly one major, key feature on top (aside from appropriate scaling parameters). Like in the former mentioned audio-stream example, add a second stream - it adds a lot feature but got "thrown in" rather cheap. Much cheaper than buying a second tier two.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">The psychology behind this</div>
+has been explained very well by <a href="http://www.youtube.com/watch?v=xOhb4LwAaJk">Dan Ariely on youtube</a>: we don&#8217;t know our preferences that well and therefore are receptive to influences like supposedly good offers in comparison to another.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_real_world_case"><a class="anchor" href="#_real_world_case"></a>Real world case</h3>
+<div class="paragraph">
+<p>I did exactly this pricing range for a crowd funding campaign of a Hollywood movie. We&#8217;ve put it to exactly these tiers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>9.95 € - you were thanked on the website, got access to the bonus material and live updates through the websites about the production, as well as a download-link for the movie as soon as it gets released on Bluray</p>
+</li>
+<li>
+<p>29.95 € - Same as before, but you&#8217;d also be mentioned in the credits of the movie.</p>
+</li>
+<li>
+<p>49.95 € - Aside from the news updates, being mentioned in the credits, you&#8217;d also be receiving a real disc version of the Bluray.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This allowed the studio to advertise with "support this movie starting from 9.95€". But the real deal was, getting mentioned in the movie, so people were immediately checking the second tier as the first didn&#8217;t offer this at all. And though many settled on this, for less than double the price, you&#8217;d also receive a Bluray - well, doesn&#8217;t that sound great?</p>
+</div>
+<div class="paragraph">
+<p>So thought 57% of the customer (while 21% went for the first and 22% for the second option). We sold them a Bluray disc for 50€. One movie - not a DVD-set. A movie could already have access to through a download link to for twenty Euros less. A Bluray discs, which costs essentially nothing in production (which is why the producers wanted to offer it as part of the lowest pricing range initially). We wouldn&#8217;t have gotten anyone to pay for this, if I had said it this way. But through this pricing schema, we could. And the customers were happy to do so.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">This is a Kickstarter-like campaign</div>
+<div class="paragraph">
+<p>Given, this is not a reoccurring subscription but a fan-driven one-time transaction also selling the fact, that you are taking part in getting something done that "without you wouldn&#8217;t happen", so people are generally more generous.</p>
+</div>
+<div class="paragraph">
+<p>But using a similar pricing scheme with 19.90€, 29.90€ and 39.90€ does have similar effects on a subscription basis.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ending_with_the_nine"><a class="anchor" href="#_ending_with_the_nine"></a>Ending with the Nine</h3>
+<div class="paragraph">
+<p>I&#8217;ve very bluntly ignored the discussing of the pricing numbers. You might have noticed I&#8217;ve only presented you cases ending on nine. If you are little familiar with the subject, you know that we don&#8217;t exactly know why, but having the price end with a nine outsells every other option (with five and seven right behind, but off by far). This has been shown in a series of studies, like <a href="http://link.springer.com/article/10.1023%2FA%3A1023581927405">this one from MIT</a> and discussed in detail in books like <a href="http://www.amazon.com/dp/080909469X/ref=cm_sw_su_dp">"Priceless" by William Poundstone</a> <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>. If you want more detail on that, I recommend reading those for further insight.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enterprise_ain_t_part_of_this"><a class="anchor" href="#_enterprise_ain_t_part_of_this"></a>Enterprise ain&#8217;t part of this</h3>
+<div class="paragraph">
+<p>The described applies as long as you are mainly talking to end-consumers, small- and mid-size businesses but not for enterprise. The basic rule goes like this: if the company is big enough to employ someone, who&#8217;s main job it is to buy these services, they&#8217;ll call you up and ask to negotiate a custom pricing tier with you. And even if it&#8217;s only to justify the existence of their job (as they have work to do: negotiate with you), believe me, they&#8217;ll do it.Which costs extra effort on your side in compared to auto-serviced customers, signing up through the website, so don&#8217;t forget to charge them for it, too.</p>
+</div>
+<div class="paragraph">
+<p>If you expect Corporate Customers, add another box on the bottom (or somewhere clearly off the comparison table) saying you are open to discuss further models and individual pricing for bigger customers or special areas (like non-profits or education, like Google is doing). During the negotiation you then go from two simultaneous stream to ten and add a big support package on top, that you sell for at least ten times the price you have on your highest tiers. That at least puts it back into the price-range that enterprise is used to deal with and happy talk to about: they really rather buy the service for 5.000€ than for 50€ as the later is harder to justify to be employed for.</p>
+</div>
+<div class="paragraph">
+<p>That is also why even your highest priced tier does have some limits to it: otherwise you&#8217;d have nothing to sell to enterprise and high-class customers. Even if during negotiations you settle for eight times the highest tier so they feel they "won" the negotiation with you, it was worth the effort for you. But don&#8217;t ever think that this is an option to include via a one-click sign-up. Enterprises don&#8217;t do one-click-sign-up.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_upselling_without_upsetting"><a class="anchor" href="#_upselling_without_upsetting"></a>Upselling without Upsetting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;ve mentioned upselling within SaaS-Product before – it&#8217;s one of the most beautiful aspects of it. The greatest thing is about upselling SaaS is it . And though we discussed before that a good pricing strategy on the overview page can already move people into settling for the more expensive tier, there is more to upsell with. Sadly, upselling has been abused in the past, like airlines tricking you into getting a "travel insurance" by already checking the field for you. To some it has a bad taste to it – for good reason, that behavior is pretty upsetting to anyone. Which is really not the first experience you want to have starting to do business with your customers. Understand that the upsell is still part of the first experience chain and getting this right is important.</p>
+</div>
+<div class="paragraph">
+<p>One company that gets upselling very right is Apple. Like everything in this chain, this also is a question of the communication and ways to present it to the other party, which decides whether it works or not. And though Apple sells end-consumer hardware, the same principles still apply to the upsell of SaaS product during the initial checkout. Let&#8217;s see how they do it.</p>
+</div>
+<div class="sect2">
+<h3 id="_case_study_upselling_like_apple"><a class="anchor" href="#_case_study_upselling_like_apple"></a>Case Study: Upselling like Apple</h3>
+<div class="paragraph">
+<p>When you go to the Apple online store to buy a new MacBook Air (as an example), you are presented with different models, similar to our packages or tiers from before:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="image/page-1-above-fold.png" alt="A Screenshot of the Macbook Air Selection">
+</div>
+<div class="title">Figure 1. Selecting a Macbook Air</div>
+</div>
+<div class="paragraph">
+<p>Same as we discussed for our tiers, there are just a few things different in these options, that make for a big distinction: the first being the Screen size (either 11 inch or 13) and the second being the amount of flash storage. By presenting those bluntly, Apple changes the question which one to buy from one based on discussing the price to the first question being about the screen size — which they do very clever by having the second screen even be presented bigger — and in the secondary stage about the storage. First you pick the screen size, then the storage and then you are presented with the price. That way, the price is merely a result of our decisions and wasn&#8217;t part of the decision in the first place.</p>
+</div>
+<div class="paragraph">
+<p>And now that you&#8217;ve decided what you want, you don&#8217;t really care that Apple is selling you 128GB of storage for 200EUR extra anymore. But it gets even better once you are selecting this one. Because then Apple presents you with the "configuration page", a second page to actually upsell you even more.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="image/apple-store-page-2.png" alt="The configuration screen">
+</div>
+<div class="title">Figure 2. The "configuration" page</div>
+</div>
+<div class="paragraph">
+<p>Sure, you can actually configure the CPU, memory and keyboard in here (which you probably want to do actually) but there is plenty of things listed, which are solely to selling you more things: how is an external screen, an AppleTV or a Printer part of a MacBook Air configuration? Well, it isn&#8217;t.</p>
+</div>
+<div class="paragraph">
+<p>But by having this second "configuration"-screen, Apple does something very smart. It took the decision of which general package you picked out of the scope. That has already been decided, the other options aren&#8217;t presented anymore. And by splitting this into two pages, you don&#8217;t have to bother about comparing prices of the configuration to other packages anymore. Adding 8GB of RAM on a 13-inch could potentially cost more than on the 11-inch (which could even have plausible, technical reasons), but no costumer would actually go back and check. Because picking another basic package isn&#8217;t of question anymore.</p>
+</div>
+<div class="paragraph">
+<p>Another thing you&#8217;ve hopefully noticed is the way this is presented: Apple takes four-fifth of the width to focus on the configuration. The summary of what you&#8217;ve selected on the other hand is just a tiny part on the right. And though it is showing the total price, always stays with the user and as such gives them total transparency about their choices, by keeping it to the top right, we are less likely to look at it or at least not until we&#8217;ve scrolled down the main part totally already.</p>
+</div>
+<div class="paragraph">
+<p>By splitting the configuration into big chunks that basically cover the bigger part of your screen while you scroll over them, each upgrade becomes separate from the others, making them appear as individual, not too expensive choices. And I have to actively decide on each one, that I don&#8217;t want them though it is only 29,99€ (extra). Making them appear separate visually, also separates the decision into individual smaller ones: me looking at the mini-display-port-cable has nothing to do with the fact that I just agreed to buy the Thunderbold. Look it&#8217;s only 29,99€. In the customers brain the other decision has been processed and labeled as done. And though one might just want the mini-display-port, the customer is less likely probably to go back and change his mind on items before in the list.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Default is "None"</div>
+<div class="paragraph">
+<p>One major flaw that many (airlines) do, is preselecting upsell-options and forcing the user to actively remove the selection in an often complicated way. Tricking a customer into upselling is an obvious way to have more people upsell but makes the customer angry and educates your customer you aren&#8217;t a trustworthy party.</p>
+</div>
+<div class="paragraph">
+<p>Unlike how Apple is doing it here, making it clear you don&#8217;t get tricked into buying anything you don&#8217;t want by communicating: "It is your choice. We are happy either way. We just think <em>this</em> might be of interest to you, too." And the customer listens. And they buy. And they are happy about it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_the_upsell"><a class="anchor" href="#_the_upsell"></a>The upsell</h4>
+<div class="paragraph">
+<p>Let&#8217;s take a look at the individual things Apple tries to sell here. The same as before with the overview product page, upselling appeals to the user, it looks good, is interesting and gets quite some space. By giving upselling so much room, Apple has enough space to present the product and all important information and list the options. Just scrolling over them is going to take a little while and at least one is going to catch your eye.</p>
+</div>
+<div class="paragraph">
+<p>And once again, how it is presented, is of high importance. Let&#8217;s take this external storage as an example:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="image/page-2-storage-none.png" alt="Thunderbold Storage">
+</div>
+<div class="title">Figure 3. Upselling you the Thunderbold storage</div>
+</div>
+<div class="paragraph">
+<p>Not only does it have quite some room and scrolling over it takes long enough for our eye to catch a glimpse and the brain to notice the content, but also the way of to come to a decision is similar as before. By presenting the price in square brackets it appears to be merely a consequence of the decision but not really part of it. No, the details of the option to select are in foreground. And it gets better, because Apple isn&#8217;t done upselling once you selected one option:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="image/page-2-storage-selected.png" alt="Selected a Storage">
+</div>
+<div class="title">Figure 4. After selecting an option, the price disappears</div>
+</div>
+<div class="paragraph">
+<p>Did you notice the difference? Apple changed the prices. As I have decided on an option, not only does it become part of my decision (and the summary) so the price disappears, also the other prices are updated to only show the difference in pricing. Genius. Because for ones the more expensive options don&#8217;t appear to be as expensive any more but also because by phrasing it "Subtract 349,95€", even the "None" option now appears to be costing something triggered by providing a positive number. Our brain immediately notices that as high, and it takes a while before it processed that "subtract" means we have to negate it.</p>
+</div>
+<div class="paragraph">
+<p>And though thinking of the negative is something our brain generally has troubles doing, by using words alongside the numbers other parts of the brain are required to process it, making it even harder. It would be quite different if instead of "subtract", it would show the minus sign or – even worse the color-codes red and green - things our brain would understand much faster and with less processing power. But by making it harder to process, the customers are more likely to stick with the selection or even chose another one that feels less expensive now. Again, Apple changed the conversation and moved it after the question whether you take this or not and towards whether you want to take more instead.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_to_upsell"><a class="anchor" href="#_what_to_upsell"></a>What to upsell</h3>
+<div class="paragraph">
+<p>In order to be able to upsell, you need to know your numbers. You should know them inside out anyway but especially those features, people think they need or want and which are slightly outside the scope of the main product, are of interest for upsell. Going back to our former cases, one example is buying an upgrade to stream 256kb/s instead of just up to 192kb/s per radio stream. Or even offering 320kb/s as the ultimate upgrade, so that DJs are super happy to be able to offer the best quality though the actual effect for most listeners wouldn&#8217;t actually change after 192kb/s anyway.</p>
+</div>
+<div class="paragraph">
+<p>An upsell is always the question of what you need, want and might want to need. Like in the Apple example, selling video adapters and printers just makes a lot of sense. Because I am buying the laptop with specific needs in mind. And by showing me those options I am reminded that I actually want to show presentations at conferences with it so I need that adapter.</p>
+</div>
+<div class="paragraph">
+<p>Another example that comes from the radio service I was mentioning before, is about one specific feature, which actually costs the service nothing and was a default for long time but is something very easy and cheap to upsell with: stream to shoutcast service. Shoutcast is an external server that would then handle the distribution of the streams meaning that only one stream out is needed at any time as the distribution would be handed off to a third party. Enabling this feature would be classic thing to upsell with. Not only because more people think they need it than actually ever use it but also as the numbers show plenty people actually do use it instead of taking the more expensive tier with more streams.</p>
+</div>
+<div class="paragraph">
+<p>By having to buy this feature extra on the second page, people are very likely to be willing to pay a higher total than just getting a tier that costs more but includes more streams and would cover them. People pay for control and convenience.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_holy_grail_of_pay_as_you_go"><a class="anchor" href="#_the_holy_grail_of_pay_as_you_go"></a>The holy Grail of Pay-as-you-go</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The latest addition to the pricing models in the SaaS market is the pay-as-you-go-model. One of the first to offer this in large scale – and make tons of money that way – was Amazon with its cloud solution Amazon Web Services (AWS). In there you&#8217;d be paying for only what you use as in CPU-Cycles, storage and traffic. Unlike many other services which only give you limited resources and block them for you, this model allows you to easily grow and scale your business starting very small but becoming very big, too. And though especially on large scale Amazon is a very expensive cloud infrastructure, it is still the most widely used and implemented one out there. Leaving analysts puzzled how they do it.</p>
+</div>
+<div class="paragraph">
+<p>Which is rooted in a common misunderstanding because in a pay-as-you-go model – despite popular believe – the selling point actually isn&#8217;t the resource itself. What you sell people are flexibility and convenience. Flexibility because most of those services offer a very, very low starting tier, a basic offer that is free in most cases. You can spin up a free instance on AWS within half an hour and try out things you want to build. For many things, this is enough to get started and once the project gains some traction and generates traffic, the customers are fine to upgrade to bigger machines and pay for the extra resources used.</p>
+</div>
+<div class="paragraph">
+<p>And in a pay-as-you-go-model you barely have any tiers to take, no steps to grow. The payment grows with the customers of the customer. And though those are priced very high, as they are always directly linked to the amount of customers they have, it is very easy to calculate that into the pricing for ones customers. At the same time it is highly flexible and promises to be able to handle peaks for you, too. Peaks are good for your business as that means more business as well. But if you run out of your traffic package because of a peak, that is very bad. The pay-as-you-go-model might be more expensive than the same resource if booked traditionally but customers are willing are paying not for the actual resource, they buy the flexibility to use resource you don&#8217;t need at the moment.</p>
+</div>
+<div class="paragraph">
+<p>The other thing it sells is the promise of growth. An infrastructure services like this makes it easy for you to grow. It is even in their interest for you to grow, because more business for their customer means more business for them. And that is the best model you can ever have, the one that has an interest in their customers base to have more business. Greatest of all business goals.</p>
+</div>
+<div class="sect2">
+<h3 id="_applied_to_tiers"><a class="anchor" href="#_applied_to_tiers"></a>Applied to tiers</h3>
+<div class="paragraph">
+<p>Thinking back of the tiers we talked about before, how does that integrate in a pay-as-you-go-model? Amazon has been pioneering here as well, with a feature they call "reserved instance hours". It boils down to a classic and old principle: the discount if you buy a lot and pay upfront.</p>
+</div>
+<div class="paragraph">
+<p>Basically instead of being charged for every minute you use, you say at the beginning of a period that you&#8217;ll pay for at least 2 full CPU months and Amazon gives you that for a discount. If you actually don&#8217;t use them, you pay too much but if you do, you don&#8217;t pay as much as for the normal pay-as-you-go. If you need more resources than that, you often pay a discounted price on those extra resources, too. Not as good as the offer for the reserved resource but still cheaper than if you hadn&#8217;t reserved at all.</p>
+</div>
+<div class="paragraph">
+<p>So, if there is any way that you can create billable resources through your service, this is the model you want to go for. Going back to the radio streaming example from before: one stream hour could be such a resource – every hour that one persons listens to a stream. Now on the lowest tier, you&#8217;d have to pay nothing, get 1.000 StreamHours included but every stream hour after is at 10cent - this would account for a little more than one full-time-listener but is enough to try the service and see if it works for you. As you&#8217;d have upgrade the shoutcast-streaming feature anyway this isn&#8217;t a long-term option for you. But 10cents per stream per person per hour also doesn&#8217;t sound too much to pay.</p>
+</div>
+<div class="paragraph">
+<p>The second tier now costs, let&#8217;s say 39€, includes 5.000 StreamingHours and every hour on top costs another 8cents. And the next one includes 15.000 at 79€ at 6cents the extra hour and the one for 99€ contains 50.000 StreamingHours with any hour after being as cheap as 2cents. This is only a calculation example and doesn&#8217;t necessarily work in the real world but it illustrates the idea. Because the concept of tiers still works here, with the special feature that you can even offer a tier of 0€ you make money with. Might even make more money with the other tiers because of the higher per-hour-price.</p>
+</div>
+<div class="paragraph">
+<p>The reason why you still want the other tiers though, should be obvious. Aside making business predictions easier, you can also reward your customers on their success. Instead of making it the experience of "well, you had so many streams, we had to cut your services", you can make it the story of "Congratulations on your peak of listeners last week. We just wanted to let you know, for successful Radio Streams like yours our Tier B has a pricing system, with which you&#8217;ve saved 100€ this month alone already.". You become part of their success story, a supporter and helper on the way. Not the technology that failed on them during the best stream of their lifetime.</p>
+</div>
+<div class="paragraph">
+<p>You are suddenly also much more interested in the numbers of each and every client and love to serve them to optimize those, give them insights and dashboards, even live stats to make them do their job better. And once you understood this mechanic behind the curtains, it becomes obvious why Amazon is so successful. It isn&#8217;t because of their resources, it is because of the business model implemented through their pricing scheme.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_pricing_still_makes_sense"><a class="anchor" href="#_other_pricing_still_makes_sense"></a>Other pricing still makes sense</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>That all said, I think there is good reason to price your SaaS-Service around the given tiers. But that doesn&#8217;t mean you have to or should be doing this. As these prices work and are most likely working for the majority of SaaS-Projects out there, there are still markets, where a different pricing (in terms of the actual numbers) makes much more sense.</p>
+</div>
+<div class="sect2">
+<h3 id="_enterprise"><a class="anchor" href="#_enterprise"></a>Enterprise</h3>
+<div class="paragraph">
+<p>I mentioned enterprise before: if the majority of your customers will be in that segment and you&#8217;d actually have to sell via the phone, the pricing categories don&#8217;t make much sense because customer acquisition is not going through the Internet and self sign up but instead is be way more expensive. Also, as said before, they like to talk about bigger numbers generally. Calling a head of sales to sell them a subscription of 50€/month just sounds like a waste of time to them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_high_priced_customers"><a class="anchor" href="#_high_priced_customers"></a>High-priced customers</h3>
+<div class="paragraph">
+<p>Another classic case I encountered at an incubator in Palestine at which I mentored, was this: one startup wanted to build a case-management-SaaS-Software for Arab Lawyers with a target price of around 30$. I argued that Lawyers are a high-pricing audience, meaning they don&#8217;t buy suites because the price is low but because the price is high. They are used being paid a lot but also to pay a lot, their whole value-chain is high-priced from their suits, over the consultants they hire up to the parties they throw. The predominantly mentality in their line of business is that a product sold at that price can&#8217;t be of high value. They&#8217;d rather be bragging how expensive something was than how cheap it was.</p>
+</div>
+<div class="paragraph">
+<p>In cases like this one I&#8217;d look at my target group, try to find what they&#8217;d be saving and arrange my pricing around that. In this example, if the software is done properly, this would save the lawyer their office assistant - which would probably be costing them at around 600$ in the market we are talking about. So if you can offer the same service for 399$, argue that they&#8217;ll still be saving a lot of money, it comes of as comparably cheap (compared to the office assistant) but still have them value the product a lot. And as most lawyers are also running their own shops, they&#8217;ll be happy to save that money.</p>
+</div>
+<div class="paragraph">
+<p>This is a very classic selling but also price-setting argument actually: finding a real world costs it would replace and put your tier lower than that while providing a similar service. This also directly puts you in pricing competition against something with a rather stable price and won&#8217;t undermine the costs of the technology very soon.</p>
+</div>
+<div class="paragraph">
+<p>Other markets with a similar attitude would be doctors, recruiters, head-hunters and HR. And I am sure there are others, so look at your market and the customers closely.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Also, in this case the argument was rather simple for that price because at 30$ even if they got 10% of all Arab lawyers to sign up, they wouldn&#8217;t get enough revenue to pay their own employees. So don&#8217;t forget to also take that into account, when talking about the price you can offer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_luxury_and_brand"><a class="anchor" href="#_luxury_and_brand"></a>Luxury and Brand</h3>
+<div class="paragraph">
+<p>Another classic case of when you should avoid the how-low-can-you-go-rule is in luxury products and brand-associated services. It is a known phenomenon that if you decrease pricing for luxury products, you make less money. There always need to be the luxury gap between the ordinary champagne were the pricing ends around 70€ per bottle and the one luxury segment that starts at 600€. But making pricing your bottle at 200€, you are to expensive for the normal market but too cheap for the luxury segment. Luxury people buy because the price is intentionally too high.</p>
+</div>
+<div class="paragraph">
+<p>A similar effect goes for brand-associated products and services - unless of course the brand focuses on being cheap generally. Normally brands try to create an emotional connection and become part of who you are. That also puts it in a certain pricing segment, that the customer defines itself in. By going under that segment, you might reach new customers, but you won&#8217;t convince the usual segment. And that&#8217;d disrupt your market share in ways, you don&#8217;t want to cope with. By offering a market competitive pricing or even something cheaper, you risk of creating the feeling of doing something cheap. And emotionally connected customers therefore feel cheap themselves, and you want to avoid that by all means.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_closing_notes"><a class="anchor" href="#_closing_notes"></a>Closing notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is written towards the end of 2013. All pricing in this book should be adapted to inflation and future shifts in spending willingness. And though I have been writing this online and it is intended for future updates, please take this into account when you look at the numbers.</p>
+</div>
+<div class="paragraph">
+<p>That said, I&#8217;d love to have your input and stories about this, too. This is only my shared experience but if you have something to share or say about this, please don&#8217;t hesitate to email me at <a href="mailto:ben@create-build-execute.com">ben@create-build-execute.com</a> and maybe I will incorporate this into the next update. Thank you for reading.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. Published at Hill and Wang, 2011, ISBN 978-0809094691
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2014-05-11 13:05:42 CEST
+</div>
+</div>
+</body>
+</html>

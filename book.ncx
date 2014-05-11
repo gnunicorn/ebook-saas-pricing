@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN"
+	"http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en-US">
+<head>
+<meta name="dtb:depth" content="2"/>
+<meta name="dtb:totalPageCount" content="0"/>
+<meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle><text>Title</text></docTitle>
+<docAuthor><text>Author</text></docAuthor>
+<navMap>
+<navPoint class="toc" id="toc" playOrder="1">
+<navLabel>
+<text>Table of Contents</text>
+</navLabel>
+<content src="toc.html"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_1" playOrder="2">
+<navLabel><text><a class="anchor" href="#_introduction"></a>Introduction</text></navLabel>
+<content src="book.html#_introduction"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_2" playOrder="3">
+<navLabel><text><a class="anchor" href="#_what_makes_saas_different"></a>What makes SaaS different?</text></navLabel>
+<content src="book.html#_what_makes_saas_different"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_3" playOrder="4">
+<navLabel><text><a class="anchor" href="#_pricing_psychology_basics"></a>Pricing Psychology basics</text></navLabel>
+<content src="book.html#_pricing_psychology_basics"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_4" playOrder="5">
+<navLabel><text><a class="anchor" href="#_upselling_without_upsetting"></a>Upselling without Upsetting</text></navLabel>
+<content src="book.html#_upselling_without_upsetting"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_5" playOrder="6">
+<navLabel><text><a class="anchor" href="#_the_holy_grail_of_pay_as_you_go"></a>The holy Grail of Pay-as-you-go</text></navLabel>
+<content src="book.html#_the_holy_grail_of_pay_as_you_go"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_6" playOrder="7">
+<navLabel><text><a class="anchor" href="#_other_pricing_still_makes_sense"></a>Other pricing still makes sense</text></navLabel>
+<content src="book.html#_other_pricing_still_makes_sense"/>
+</navPoint>
+<navPoint class="chapter" id="chapter_7" playOrder="8">
+<navLabel><text><a class="anchor" href="#_closing_notes"></a>Closing notes</text></navLabel>
+<content src="book.html#_closing_notes"/>
+</navPoint>
+</navMap></ncx>
