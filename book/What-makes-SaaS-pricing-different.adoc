@@ -1,0 +1,12 @@
+
+== What makes SaaS pricing different ==
+
+=== Low marginal costs ===
+One of the main differences of software vis-a-vis physical products is that it is extremely cheap to produce another unit. Making your app available to yet another customer comes at little, or even zero costs to you. That means that, even though you will need to cover the initial costs of building the app, you do not need to take account of the marginal costs when calculating your selling price.
+
+=== Competition ===
+In case of Software-as-a-Service, competition is very rarely a race to the bottom – where you try to outsell your competitor by offering ever lower prices for your product. Generally speaking, your (potential) customer would probably be able to find a freely downloadable version of similar software somewhere on the web. Instead, they choose you. Why? Because your service offers a feature that is especially useful for them. Maybe your service is more reliable, better tailored to their needs, easier to use etc. This means that even though other people may be offering a similar service, there is no immediate need to try and out-price them.(basically, if your potential customer downloads the free version instead, you're doing it wrong)
+
+=== Subscription ===
+Providing SaaS allows you to offer a subscription model, where your customers pay a monthly fee, instead of a one-off sum. This simple fact has important implications for both marketing and pricing. For one, keeping your customer happy is of vital importance. Secondly, instead of continuously searching for new customers, you could also try to increase your earnings from existing clients by adapting your service to their needs and offering them additional features whenever they outgrow their current package. Obviously, you should include all this in your pricing (see below)!
+

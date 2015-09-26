@@ -1,0 +1,54 @@
+== Pricing Psychology basics == 
+
+Without the need to out-price the competition, or cover production costs, what should your prices be based on? The simple answer: customer demand. Whatever your customer is willing to pay should be your price, basically. 
+
+Nope. That wasn't very helpful. How are you supposed to figure out what your customer would or would not pay? Luckily, people have done research. 
+
+=== Choice ===
+
+First off, you are not just selling one service. That beautiful piece of software you just wrote has many different features. Features that can be switched on, or off. In addition, once you start talking to your customers you will soon learn that they all have different needs and requirements. Some want more speed, but without the storage, while others may have a need for storage but could do without any syncing. Listen to them too much and you will soon end up with 48 different packages, all with different prices. The sort of chaos you should want to avoid.
+
+Studies into human behavior show that too much choice means we avoid making a decision. Offer your potential customer 48 options and they will pick none. Give them only 3 options, and they are far more likely to subscribe to your service! 
+
+Increase conversion rates even further by making the 3 packages highly comparable. This means that the most expensive version should have all the same features included in the basic package, plus extras. All this information should be easily observable and the three packages should be displayed on a single page.
+
+
+=== The first package is the hook ===
+
+The lowest priced package is the one you'll use for advertising and marketing. It should cheap, if not super cheap. This is also the (only) package for which you offer a free trial. Both the low price and free trial lower the entry barrier, making it easy for people to start using your service. So, go as low as you can, while still making some money.
+
+What should you offer in this cheap version? Enough to be interesting for new customers. If you've a good feel for your market, you probably know what that entails – otherwise do some market research. At the same time, the cheapest package should be too lightweight for your real customers. For example your customers might be self-employed lawyers acting on 10 court cases at the same time, and your smallest package only allows for 8 court cases. That should be enough to get a good idea of the service, but anyone using it full-time would eventually want to pay more to include all 10 cases.
+
+Once the free trial is over and someone comes back to select a 'real' package, you have got yourself a customer! Now, it should be obvious to them that the cheap version is not enough (again, know your market). This is why you also offer two other packages. By making the cheapest solution irrelevant to your real customer, they immediately move to the second plan, not even questioning whether the competition might offer something better at the same price. In addition, research shows that by selecting the second or third package people enjoy a slight satisfactory feeling of "being higher than just somebody".
+
+=== The second package is good, the third is to settle ===
+
+The second packages offers much more than the lowest one we previously discussed. Not only can your customers run their businesses with it, but it is almost too generous, offers more than they ever feel they'll need, for just about double the initial price.
+
+It is indeed a very good offer, and they _should_ now want to settle settle. Yet, many do not. By offering so much already – essentially all most people would ever want – they become curious about what more you could be offering. And they'll have a look at the third package to compare it to the second.
+
+This it where things get interesting. The third package is usually suggested as a way to get your customer to settle on the second package, however you could probably do better. First off, the price difference between the third and second package should be less than that between the second and the first. Next to that, the third packages should offer something extraordinary, though not necessarily needed (like 10.000 sms per month – no one ever uses that). By adding this glitter and glamour you increase the attractiveness of the third plan by a lot, while staying comparably in-expensive. 
+
+In my experience, the best way to achieve this is by adding exactly one major key feature on top (aside from appropriate scaling parameters). Like in the formerly mentioned lawyer example, a third package couldadd a second account for an office assistant. This adds a lot of value, while the perceived price difference is very small (coincidentally, it comes at almost no costs to you). Ultimately, when comparing the second and third packages, the third becomes much more attractive.
+
+.INCLUDE SOME INFO ON THE ACTUAL PRICES, HOW DID YOU COME UP WITH 29.99?
+9.99, 19.99, 29.99??? Tell them to look at compar
+
+.The psychology behind this
+NOTE: has been explained very well by link:http://www.youtube.com/watch?v=xOhb4LwAaJk[Dan Ariely on youtube]: we don't know our preferences that well and therefore are receptive to influences like supposedly good offers in comparison to another.
+
+=== Does 9.99 really work? ===
+
+The answer is yes. Humans don't trust rounded numbers (like 10.0) and deem numbers with more decimals more reliable – in the sense that they would be more likely to represent some true price. Obviously, all of this is highly unconscious. In addition, research shows that for some reason (unknown to me, or the researchers) prices that end with a nine outperform every other option (with five and seven right behind, but off by far). This has been shown in a series of studies, like link:http://link.springer.com/article/10.1023%2FA%3A1023581927405[this one from MIT] and discussed in detail in books like link:http://www.amazon.com/dp/080909469X/ref=cm_sw_su_dp["Priceless" by William Poundstone] footnote:[Published at Hill and Wang, 2011, ISBN 978-0809094691]. If you want more detail on that, I recommend reading those for further insight.
+
+=== Selling to enterprises ===
+
+The basic rule goes like this: if the company is big enough to employ someone who's main job it is to buy services like yours, instead of pressing a button on a website, they'll call you up and ask to negotiate a custom pricing plan. Big companies assumes normal pricing plans don't apply to them. Also, the person in charge with subscribing to these services needs to be able to justify their job. 
+
+Obviously, all of this means more work for you. You now need to pick up the phone and negotiate. Let's make sure it's worth the effort! 
+
+During the negotiation you triple your offer and add a big support package on top, which you sell for at least ten times the price you have on your highest plans. That at least puts it back into the price-range that enterprises are used to deal with and happy talk to about: they really rather buy the service for €5.000 than for €50.
+
+That is also why even your highest priced plan should still have limits, it leaves with something to sell to enterprises and high-class customers. Even if during negotiations you settle for eight times the highest plan so they feel they "won" the negotiation with you, it was worth the effort for you. But don't ever think that this is an option to include via a one-click sign-up. Enterprises don't do one-click-sign-up.
+
+Finally, if you expect your service could be interesting to corporate clients, don't forget to add another box on the bottom of your landing page (or somewhere clearly off the comparison table) saying you are open to discuss other pricing options and offer individual pricing for bigger customers or special institutions (like non-profits or education, as Google is doing).

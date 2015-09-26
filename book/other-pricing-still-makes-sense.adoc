@@ -1,0 +1,25 @@
+
+== Other pricing still makes sense
+With all that said, I think there is good reason to price your SaaS-Service around the given plans. But that doesn't mean you have to or should be doing this. As these prices work and are most likely working for the majority of SaaS-Projects out there, there are still markets, where a different pricing (in terms of the actual numbers) makes much more sense. I'd like to point out a few to give you an idea about this.
+
+=== Enterprise
+I mentioned enterprise before: if the majority of your customers will be in that segment and you'd actually have to sell via phones or visits, the pricing categories don't make much sense. Customer acquisition is not going through the Internet and self sign up but on much more expensive channel. Also, as said before, they like to talk about bigger numbers generally. Calling a head of sales to sell them a subscription of 50€/month just sounds like a waste of time to them.
+
+=== High-priced customers
+Another classic case I encountered at an incubator in Palestine at which I mentored, was this: one startup wanted to build a case-management-SaaS-Software for Arab Lawyers with a target price of around 30 $. I argued that Lawyers are a _high-pricing audience_, meaning they don't buy suites because the price is low but because the price is high. They are used being paid a lot but also to pay a lot, their whole value-chain is high-priced, from their suits over the consultants they hire up to the parties they throw. The predominantly mentality in their line of business is that a product sold at a low price can't be of high value. They'd rather be bragging how expensive something was than how cheap it was.
+
+In cases like this one I'd look at my target group, try to find what they'd be saving by using this service and arrange my pricing around that. In this example, if the software is done properly, this would save the lawyer their office assistant, which would probably cost them at around 600$ a month in that market. So if you can offer the same service for 399$, argue that they'll still be saving a lot of money, it comes of as a money saver (compared to the office assistant) but still makes them value the product a lot. And as most lawyers are also running their own shops, they'll be happy to save that money.
+
+This is a very classic selling but also price-setting argument actually: finding a real world costs it would replace and put your plan lower than that while providing a similar service. This also directly puts you in pricing competition against something with a rather stable price and won't undermine the costs of the technology very soon.
+
+Other markets with a similar attitude would be doctors, recruiters, head-hunters and HR. And I am sure there are others, so look at your market and the customers closely.
+
+[NOTE]
+====
+Also, in this case the argument was rather simple for that price as at 30$ even if they got 10% of all Arab lawyers to sign up, they wouldn't get enough revenue to pay their own employees. So don't forget to also take that into account, when talking about the price you can offer.
+====
+
+=== Luxury and Brand
+Another classic case in which you'd want to avoid the how-low-can-you-go-rule is in luxury products and brand-associated services. It is a known phenomenon that if you decrease pricing for luxury products, you make less money. There always need to be the luxury gap between the ordinary champagne were the pricing ends around 70 € per bottle and the luxury segment that starts at 600€. And though pricing your bottle at 200 € seems like a missing market niche, you will be to expensive for the normal market and too cheap for the luxury segment. Luxury people buy because the price is too high on purpose.
+
+A similar effect goes for brand-associated products and services - unless of course the brand focuses on being cheap. Normally brands try to create an emotional connection and become part of who you are. That also puts it in a certain pricing segment, that the customers defines themselves in. By going under that segment, you might reach new customers, but you won't convince the usual segment. And that'd disrupt your market share in ways, you don't want to cope with. By offering a market competitive pricing or even something cheaper, you risk of creating the feeling of doing something cheap. And emotionally connected customers therefore feel cheap themselves. You want to avoid that by all means.

@@ -1,0 +1,37 @@
+=== Salesforce.com
+
+_Guest contribution by Alexander Scholz_
+
+Salesforce.com is a customer relationship service entirely build online. They are best known as one of the first  companies successfully building a business solely based the Software-as-a-Service.
+
+Salesforce has hardly changed their pricing in the last couple of years. They run 4-5 different pricing models. The amount of plans vary on country. The price vary on country and currency, based on their approach on how to enter the underlying market.
+
+==== Pricing Plans
+
+For german customers the pricing starts with 4 EUR / month per client for the Contact Manager Edition and ends with 350 per month for the Performance Plan, if paid yearly. As described earlier, it is really useful to rest the pricing upon a per user base: you can get into a smaller company and grow together with their needs to go for more Salesforce users, thus upselling for Salesforce gets easier.
+
+Whats interesting here, is that the pricing range itself got bigger during the last price changes in 2013 / 2014. On the one hand the smallest plan got a little bit cheaper, so entering new niches in the market gets easier. On the other hand the most expensive pricing got even more expensive, but got also injected with some  additional features and services and definitely aims for the big corporate guys. Salesforce.com gets serious about competing with Microsoft and Oracle for the blue chips as CRM systems.
+
+Nevertheless the first two plans are limited to five users per company. They make sure, that upselling the plan is just a matter of time for their clients. Interestingly it was possible as a Salesforce client to go for e.g. two times the Group Edition, if you wanted to stick around with the plan, without moving up to the next one just because you needed one more user.  From the point of view of Salesforce this is really a great thing to do. Firstly, you save the client a lot of money and secondly you keep them as clients and secondly you really make them happy, because the actually can save more than 3x their money by not moving from the Group to the Professional Plan.
+
+Of course they also highlight their "most popular" plan. I never believed in this kind of advertising. But it works, and keeps up their margin.
+
+==== Differences of Plans
+
+The different pricing plans are build on each other. The next one includes all functions from the previous but offers more functions as well. Being a Salesforce user myself, I know, that sometimes the decision for one plan over another is a hard one, especially when the delta between two plans can easily be more than 50 EUR per user per month (600EUR a year). I think one of the most features people want the most is the Salesforce API. And so Salesforce offers their API starting with the Enterprise Edition, which is already very pricey (135 EUR / user). It is really interesting, that you can add the Salesforce API separately also to the previous plan, but than the API alone will cost around 50 EUR per user. If you add this up with the pricing for the Professional, which is 70EUR you are pretty close to the 135EUR of the Enterprise version.
+
+There is a great thing you can learn about upselling a product. Usually people really want some extra possibilities they can bargain over (e.g. Salesforce API for lower pricing plans for some extra cash). If you offer them this possibility they will be happy. But if they have to choose between the lower plan plus one extra function or the bigger plan, which ends up being slightly more expensive, they will usually go for the bigger plan, as they get the full scope of functionalities.
+
+==== How Salesforce handles discounts
+From the first glance, Salesforce does not offer any discounts at all. Getting deeper into it, they do. Here are some possibilities.
+
+===== Discount based on contract term
+Usually you pay for one year in advance. This is bad for you, but good for Salesforce. If you pay for two years in advance, you can save up to 15% per year additionally. On the one hand you save real money, on the other you are stuck to the service. By the way, upgrading your plan is pretty easy here, downgrading is nearly impossible.
+
+This example is perfect to reduce churn and improve your planning, which is equally key for a SaaS company. I think, you should consider such an hidden offer, always.
+
+===== Discount on number of users
+Although they announce, that pricing is fixed based on your user base, you can talk them into some discounts, when you start growing. I don't really think, that this is useful, as it waters down your pricing model, but sometimes it is of great help to keep clients happy.
+
+===== Discounts at the end of quarters
+Salesforce is a pretty big public company. Making shareholders happy with quarter to quarter growth is really important. Thats why they are more flexible at the end of their fiscal quarter. Of course this isn't exactly something a startup should consider, but it should give you an idea, that announcing an special offer pro actively, can boost your sales in mid-term.“

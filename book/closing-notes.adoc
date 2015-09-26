@@ -1,0 +1,9 @@
+
+== Closing notes
+This is written towards the end of 2013 and the beginning of 2014. All pricing in this book should be adapted to inflation and future shifts in spending willingness. And though I have been writing this online and it is intended for future updates, please take this into account when you look at the numbers and their relation to each other.
+
+=== Feedback
+
+That said, I'd love to have your input and stories about this, too. If you have remarks or critique or just want to share your experience, please don't hesitate to either link:https://github.com/ligthyear/ebook-saas-pricing/issues/new[open a ticket] on link:https://github.com/ligthyear/ebook-saas-pricing/[the Github repository] or – if you aren't sure how to do that – email me directly at ben@create-build-execute.com . And maybe I will incorporate your feedback into the next update.
+
+Thank you for reading.

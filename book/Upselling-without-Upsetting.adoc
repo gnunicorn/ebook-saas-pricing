@@ -1,0 +1,25 @@
+== Upselling without Upsetting
+
+Upselling is one of the most beautiful aspects of SaaS-pricing. The previously discussed pricing strategies are one way of upselling, as you try to move your customers into the higher priced plans. Oftentimes, there are many more ways in which you can upsell your service. 
+
+Sadly, upselling has been abused in the past, like airlines tricking you into getting a "travel insurance" by pre-checking boxes for you. No wonder upselling has gotten such a bad rep. Nonetheless, you can use upselling techniques without being evil. In fact, getting this part right can be of tremendous importance. 
+
+=== How to structure the upsell
+
+Generally speaking, upselling happens right after your customer selected a package and right before they hand over their payment details. At this stage, you often present your customer with a screen that allows them to configure the acquired service – a great time to upsell.
+
+It is not hard to imagine that your customer, who is now in the process of setting up the service, might be interested in configuring more features. Psychologically, as the initial buying phase is behind them, it is unlikely your customer will return to the packages page to figure out whether they can get the same feature as part of another package. They've already settled. 
+
+At this time it is about presenting presenting some additional options in a non-threatening way and allow your customer to "configure" those.
+
+
+=== What to upsell
+
+In order to be able to upsell, you obviously need to know your numbers and your customers. For upselling the best are those features people think they need, will need soon or want, but which are slightly outside of the main product. 
+
+For instance, in the case of our lawyer, you could allow them to configure more frequent backups of their data (increase to hourly for example) for a little more or allow them to enable encryption (and secure signing) for archived cases. Both are not necessarily the core of the product, but your customers, once reminded that this exists, might well be willing to pay for it. An upsell is always the question of what your customer _needs_, _wants_ and might _want to need_.
+
+
+_Another example would be the an online radio streaming service, which had a feature allowing to directly stream to the shoutcast service. Shoutcast is an external server that would then handle the distribution of the streams, resulting in their service only having to offer one output stream. It didn't cost them anything – if anything it was cheaper for them as the traffic would go through Shoutcast. But as many (if not all) other competing providers forbid these kind of features to enable a lock-in effect, enabling this feature is a classic thing to upsell with. Not only because more people think they need it than actually ever use it but also as the numbers show plenty people do use it instead of taking the more expensive plan with more streams.
+
+By having to buy this feature extra on the second page, for an additional price, many people were willing to pay a higher total than just getting a plan that costs more but includes more streams and but would cover that, too. People pay for control and convenience._ NEEDS WORK!!
