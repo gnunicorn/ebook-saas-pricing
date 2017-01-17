@@ -1,6 +1,5 @@
 = Book
 
-. link:book/Introduction.adoc[Introduction]
 . link:book/What-makes-SaaS-pricing-different.adoc[What makes Saas Pricing different]
 . link:book/Pricing-Psychology-Basics.adoc[Pricing Psychology Basics]
 . link:book/Upselling-without-Upsetting.adoc[Upselling without Upsetting]

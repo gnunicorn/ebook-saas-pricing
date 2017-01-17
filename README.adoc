@@ -4,8 +4,12 @@
 image::cover.jpg[scaledwidth="80%",alt="A Developer's guide to SaaS App Pricing Cover"]
 
 
-## License
+## Introduction
 
-Copyright 2015, Benjamin Kampmann.
+Welcome to this short guide on pricing Software as a Service (Saas). The main goal of the guide is to help you decide how to create different packages for your service and what to charge for each -  without getting lost in all the buzzwords. It'll start by laying down the basics and then looks at successful software providers for further examples. 
 
-This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+This guide is for you if you have just written some software that you would like to provide as a service, but you have little experience with selling. If you have no idea what SaaS is, you may want to start reading up on that first!
+
+Before we start, for those of you who are not big on reading, for 80% of the cases the optimal price for your service will be €29.95/month ($36.95/month). This guide will explain you why and for which cases it is different. But if you don't care and just want a number, odds are, this is the number you want.
+
+Enjoy.
